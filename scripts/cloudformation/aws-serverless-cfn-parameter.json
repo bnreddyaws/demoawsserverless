@@ -1,6 +1,6 @@
 {
   "Parameters": {
-    "Author": "athakur",
+    "Author": "nasara",
     "LambdaRoleArn": "arn:aws:iam::703085461864:role/lambdas3"
    
   }
