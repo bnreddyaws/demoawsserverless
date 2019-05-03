@@ -9,6 +9,6 @@
   "dependencies": {
     "aws-sdk": "^2.291.0"
   },
-  "author": "athakur",
+  "author": "nasara",
   "license": "UNLICENSED"
 }
