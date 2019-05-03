@@ -5,16 +5,16 @@ phases:
       - echo Starting to install, build modules on `date`
       - export HOME_DIR=$CODEBUILD_SRC_DIR
       - npm set progress=false
-      - sh $HOME_DIR/scripts/node-lambdas.sh build
+      - sh node-lambdas.sh build
   build:
     commands:
       - echo Packaging started on `date`
-      - sh $HOME_DIR/scripts/node-lambdas.sh package
+      - sh node-lambdas.sh package
   post_build:
     commands:
       - echo Build completed on `date`
       - cd $HOME_DIR/scripts/cloudformation/
-      - aws cloudformation package --debug --template-file samTemplate.yaml --s3-bucket aws-serverless-builds --output-template-file aws-serverless-cfn-template.yaml
+      - aws cloudformation package --debug --template-file samTemplate.yaml --s3-bucket demo-test-lambda-cd --output-template-file aws-serverless-cfn-template.yaml
 cache:
   paths:
     - '/root/.npm/**/*'
